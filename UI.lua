@@ -1,12 +1,17 @@
 local Link = loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostDuckyy/Ui-Librarys/main/Playstation%20Ui%20Library/Source'))()
+local playername = game:GetService("Players").LocalPlayer.Name
 
-local Win = Link:CreateWindow('Magic Champions! v3.51','by Odina') -- :CreateWindow(Title,Info) Note: info no space
-
-local Autofarm = Win:addPage('Autofarm', 2, true, 6)
-local Utility = Win:addPage('Utility', 1.1, true, 6)
-local Entrenaje = Win:addPage('Training zones', 6.1, true, 6) -- :addPage(Title, Scoll Size, Visible, elementspacing)
-local UPAdded = Win:addPage('What is new?', 1.1, true, 6)
+local Win = Link:CreateWindow('Magic Champions! 🧙                        (v3.51)','by Odina') -- :CreateWindow(Title,Info) Note: info no space
 --
+local Autofarm = Win:addPage('> Autofarm', 2, true, 6)
+local Entrenaje = Win:addPage('> Training zones', 6.1, true, 6) -- :addPage(Title, Scoll Size, Visible, elementspacing)
+local Utility = Win:addPage('> Utility', 1.1, true, 6)
+local UPAdded = Win:addPage('(!) What is new?', 1.1, true, 6)
+local empty = Win:addPage(' ', 0, true, 6)
+local useruwu = Win:addPage(playername, 0, true, 6)
+
+--
+UPAdded:addLabel('>> Last Update // 25th MAY <<')
 UPAdded:addLabel('- New UI')
 UPAdded:addLabel('- New Auto Multipliers')
 UPAdded:addLabel('- Added more chests')
@@ -36,40 +41,40 @@ getgenv().MultiplierSpeed = false
 
 
 -- Label
-Autofarm:addLabel('Autofarm') -- :addLabel(Title, Info)
+Autofarm:addLabel('>> Autofarm <<') -- :addLabel(Title, Info)
 
 -- Toggles
-Autofarm:addToggle('Strength', function(bool)
+Autofarm:addToggle('👊 Strength', function(bool)
 getgenv().Strength = bool -- :addToggle(Title, callback)
 if bool then
 Strength()
     end
 end)
-Autofarm:addToggle('Endurance', function(bool)
+Autofarm:addToggle('🛡 Endurance', function(bool)
 getgenv().Endurance = bool -- :addToggle(Title, callback)
 if bool then
 Endurance()
     end
 end)
-Autofarm:addToggle('Wisdom', function(bool)
+Autofarm:addToggle('🧠 Wisdom', function(bool)
 getgenv().Wisdom = bool -- :addToggle(Title, callback)
 if bool then
 Wisdom()
     end
 end)
-Autofarm:addToggle('Agility', function(bool)
+Autofarm:addToggle('🌩 Agility', function(bool)
 getgenv().Agility = bool -- :addToggle(Title, callback)
 if bool then
 Agility()
     end
 end)
-Autofarm:addToggle('Speed', function(bool)
+Autofarm:addToggle('👟 Speed', function(bool)
 getgenv().Speed = bool -- :addToggle(Title, callback)
 if bool then
 Speed()
     end
 end)
-Autofarm:addLabel('Auto Upgrade Multipliers') -- :addLabel(Title, Info)
+Autofarm:addLabel('>> Auto Upgrade Multipliers << (WILL FIX SOON!)') -- :addLabel(Title, Info)
 
 Autofarm:addToggle('Strength Upgrade', function(bool)
     getgenv().MultiplierStrength = bool -- :addToggle(Title, callback)
@@ -222,7 +227,7 @@ Entrenaje:addButton('20M Endurance', function() -- :addButton(Title, callback)
     humanoid:ChangeState(Enum.HumanoidStateType.Flying)
     pl.CFrame = location
 end)
-Entrenaje:addButton('100M Wisdom', function() -- :addButton(Title, callback)
+Entrenaje:addButton('200M Wisdom', function() -- :addButton(Title, callback)
     local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
     local location = CFrame.new(-2644, -33, 1434)
     local humanoid = game.Players.LocalPlayer.Character.Humanoid
